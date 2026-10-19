@@ -845,6 +845,47 @@
   }
 
   @media(prefers-reduced-motion:reduce){*{animation-duration:.001s!important}.rv,.hero-inner>*{opacity:1;transform:none}}
+
+  /* ════════════════════════════════════════════════════════════
+     UNIFIED THEME — หมึกเข้ม + ทองเหลือง ทั้งเว็บ (2026-10-10)
+     เปลี่ยนสีหลักทั้งเว็บได้ที่ :root ด้านล่างนี้ที่เดียว
+     ════════════════════════════════════════════════════════════ */
+  :root{
+    --accent:#7D6431; --accent-dk:#5F4B22;          /* ทองเหลืองเข้ม · ปุ่ม/ไฮไลต์ (ตัวอักษรขาวอ่านชัด) */
+    --accent-rgb:151,122,62;                        /* ใช้กับเงา/แสงเรือง */
+    --c-robot:var(--gold); --c-logi:var(--gold); --c-cnc:var(--gold); --c-energy:var(--gold);
+    --banner-shade:8,11,18;                         /* เงาแบนเนอร์ทุกหน้าใช้หมึกเดียวกัน */
+  }
+
+  /* ── แบนเนอร์ทุกหน้า: สีเน้นเดียวกัน · เงาเดียวกัน · เกรดภาพเดียวกัน ── */
+  .banner-solutions,.banner-products,.banner-insights,.banner-contact{--banner-accent:var(--gold-lt)}
+  .banner-solutions .ph,.banner-products .ph,.banner-insights .ph,.banner-contact .ph{filter:saturate(.8) contrast(1.05)}
+  .banner-solutions .shade,.banner-products .shade,.banner-insights .shade,.banner-contact .shade{background:
+    linear-gradient(90deg,rgba(var(--banner-shade),.86),rgba(var(--banner-shade),.46) 55%,rgba(var(--banner-shade),.12)),
+    linear-gradient(0deg,rgba(var(--banner-shade),.6),transparent 76%)}
+  /* ลายกราฟิกประกอบแบนเนอร์ เปลี่ยนจากเขียวมิ้นต์เป็นทอง */
+  .banner-solutions::after{border-color:rgba(195,166,103,.45);
+    background:radial-gradient(circle,transparent 39%,rgba(195,166,103,.14) 40%,transparent 41%),linear-gradient(90deg,transparent 49.7%,rgba(195,166,103,.34) 50%,transparent 50.3%),linear-gradient(transparent 49.7%,rgba(195,166,103,.34) 50%,transparent 50.3%);
+    box-shadow:0 0 0 18px rgba(195,166,103,.07),0 0 0 42px rgba(195,166,103,.04)}
+  .banner-contact::after{border-color:rgba(195,166,103,.45);
+    background:radial-gradient(circle at 24% 66%,#C3A667 0 3px,transparent 4px),radial-gradient(circle at 52% 38%,#C3A667 0 3px,transparent 4px),radial-gradient(circle at 76% 58%,#C3A667 0 3px,transparent 4px),linear-gradient(145deg,transparent 23%,rgba(195,166,103,.62) 23.3%,transparent 23.8% 53%,rgba(195,166,103,.62) 53.3%,transparent 53.8%);
+    box-shadow:0 0 0 20px rgba(195,166,103,.06),0 0 0 44px rgba(195,166,103,.035)}
+
+  /* ── แสงเรือง/เส้นขอบที่เคยเป็นน้ำเงิน → ทอง ── */
+  .soon{box-shadow:0 6px 18px -6px rgba(var(--accent-rgb),.7)}
+  .uc.venue .uctags span{background:rgba(var(--accent-rgb),.06);border-color:rgba(var(--accent-rgb),.22)}
+  .catdl::after{background:linear-gradient(100deg,transparent 40%,rgba(var(--accent-rgb),.38))}
+  .subrow.lv3{border-left-color:var(--gold-lt)}
+  .card:hover{filter:drop-shadow(0 10px 24px rgba(var(--accent-rgb),.3))}
+  .card:hover .ghost{color:rgba(var(--accent-rgb),.13)}
+  .card-vis{background:#F2EFE8}
+  .fvisual,.pcard .ph,.prodflow .pcard .ph,.card-vis{border-color:rgba(var(--accent-rgb),.24);
+    box-shadow:inset 0 0 0 1px rgba(255,255,255,.76),0 0 16px rgba(var(--accent-rgb),.08),0 10px 26px rgba(15,18,24,.08)}
+  .card-vis::after{border-color:rgba(var(--accent-rgb),.24)}
+  .pcard:hover .ph,.prodflow .pcard:hover .ph,.card:hover .card-vis,.fvisual:hover{border-color:rgba(var(--accent-rgb),.75);
+    box-shadow:inset 0 0 0 1px rgba(255,255,255,.92),0 0 24px rgba(var(--accent-rgb),.22),0 16px 32px rgba(15,18,24,.13)}
+  .card:hover .card-vis::after{border-color:rgba(var(--accent-rgb),.75)}
+  .catdl{background:linear-gradient(100deg,var(--ink) 0%,#1E2128 100%)}
 </style>
 </head>
 <body>
@@ -1253,19 +1294,19 @@
       <p class="rsub" data-en="Fill in the basics and our team will reply with a quote.">กรอกข้อมูลเบื้องต้น ทีมงานจะติดต่อกลับพร้อมใบเสนอราคา</p>
       <form id="rfqForm">
         <div class="field-row">
-          <div class="field"><label data-en="Full name">ชื่อ-สกุล</label><input required type="text" placeholder="—"></div>
-          <div class="field"><label data-en="Company">บริษัท</label><input required type="text" placeholder="—"></div>
+          <div class="field"><label data-en="Full name">ชื่อ-สกุล</label><input required type="text" name="name" placeholder="—"></div>
+          <div class="field"><label data-en="Company">บริษัท</label><input required type="text" name="company" placeholder="—"></div>
         </div>
         <div class="field-row">
-          <div class="field"><label data-en="Email">อีเมล</label><input required type="email" placeholder="you@company.com"></div>
-          <div class="field"><label data-en="Phone">โทรศัพท์</label><input required type="tel" placeholder="08x-xxx-xxxx"></div>
+          <div class="field"><label data-en="Email">อีเมล</label><input required type="email" name="email" placeholder="you@company.com"></div>
+          <div class="field"><label data-en="Phone">โทรศัพท์</label><input required type="tel" name="phone" placeholder="08x-xxx-xxxx"></div>
         </div>
         <div class="field"><label data-en="Solution of interest">กลุ่มโซลูชันที่สนใจ</label>
-          <select><option>Robotic Automation</option><option>Automated Logistics</option><option>Robot Service</option><option>Robot Station Service</option><option data-en="Not sure — need advice">ยังไม่แน่ใจ ต้องการคำปรึกษา</option></select>
+          <select name="solution"><option>Robotic Automation</option><option>Automated Logistics</option><option>Robot Service</option><option>Robot Station Service</option><option data-en="Not sure — need advice">ยังไม่แน่ใจ ต้องการคำปรึกษา</option></select>
         </div>
-        <div class="field"><label data-en="Details">รายละเอียดความต้องการ</label><textarea rows="3" placeholder="—"></textarea></div>
+        <div class="field"><label data-en="Details">รายละเอียดความต้องการ</label><textarea rows="3" name="details" placeholder="—"></textarea></div>
         <button type="submit" class="btn btn-accent"><span data-en="Send request">ส่งคำขอใบเสนอราคา</span> <svg width="15" height="15" viewBox="0 0 15 15" fill="none"><path d="M3 7.5h9M8 3.5l4 4-4 4" stroke="currentColor" stroke-width="1.6"/></svg></button>
-        <p class="rfq-note" data-en="Demo form — no data is actually submitted.">ตัวอย่างเดโม · ยังไม่มีการส่งข้อมูลจริง</p>
+        <p class="rfq-note" data-en="Your request goes straight to our sales team on WhatsApp.">คำขอของท่านจะส่งตรงถึงทีมขายทาง WhatsApp ทันที</p>
       </form>
     </div>
   </div></section>
@@ -1759,10 +1800,32 @@ function startCounters(){
   });
 }
 
-/* ---------- RFQ form ---------- */
+/* ---------- RFQ form → แจ้งเตือน WhatsApp อัตโนมัติ ----------
+   ใช้ CallMeBot (ฟรี) ส่งข้อความเข้า WhatsApp ของทีมขายทันทีที่ลูกค้ากด "ส่ง"
+   วิธีรับ API key: บันทึกเบอร์ +34 644 95 73 56 แล้วส่ง WhatsApp ข้อความ
+   "I allow callmebot to send me messages" → บอทจะตอบกลับพร้อม apikey มาใส่ด้านล่าง
+   ถ้ายังไม่ใส่ apikey ระบบจะเปิด WhatsApp ฝั่งลูกค้าพร้อมข้อความที่กรอกไว้ให้กดส่งเอง */
+// ใส่ได้หลายเบอร์ · แต่ละเบอร์ต้องขอ apikey ของตัวเอง · เบอร์แรก = เบอร์หลัก (ใช้ตอนยังไม่มี apikey)
+const RFQ_WA=[
+  {phone:'6598183419',apikey:''},
+  {phone:'',apikey:''},
+  {phone:'',apikey:''}
+];
 document.getElementById('rfqForm').addEventListener('submit',e=>{
   e.preventDefault();
-  const t1=lang==='th'?'ส่งคำขอเรียบร้อย':'Request sent',t2=lang==='th'?'ทีมวิศวกรจะติดต่อกลับภายใน 24 ชั่วโมงทำการ (ตัวอย่างเดโม)':'Our engineers will reply within 24 business hours (demo).';
+  const f=e.target,v=n=>(f.elements[n]?.value||'-').trim()||'-';
+  const stamp=new Date().toLocaleString('en-GB',{timeZone:'Asia/Singapore'});
+  const msg=`*🔔 New RFQ — ROBOTA1 Website*\n`+
+    `*Name:* ${v('name')}\n*Company:* ${v('company')}\n*Email:* ${v('email')}\n*Phone:* ${v('phone')}\n`+
+    `*Solution:* ${v('solution')}\n*Details:* ${v('details')}\n_${stamp} (SGT)_`;
+  const ready=RFQ_WA.filter(r=>r.phone&&r.apikey);
+  if(ready.length){
+    // ส่งแบบเบื้องหลังทุกเบอร์ (GET ผ่าน Image เพื่อเลี่ยงปัญหา CORS)
+    ready.forEach(r=>{new Image().src=`https://api.callmebot.com/whatsapp.php?phone=${r.phone}&apikey=${r.apikey}&text=${encodeURIComponent(msg)}`;});
+  }else{
+    window.open(`https://wa.me/${RFQ_WA[0].phone}?text=${encodeURIComponent(msg)}`,'_blank','noopener');
+  }
+  const t1=lang==='th'?'ส่งคำขอเรียบร้อย':'Request sent',t2=lang==='th'?'ทีมวิศวกรจะติดต่อกลับภายใน 24 ชั่วโมงทำการ':'Our engineers will reply within 24 business hours.';
   document.getElementById('rfqCard').innerHTML=`<div class="rfq-sent"><svg class="ok" viewBox="0 0 56 56" fill="none"><circle cx="28" cy="28" r="26" stroke="currentColor" stroke-width="2.5"/><path d="M17 29l7 7 15-16" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg><h3>${t1}</h3><p class="rsub">${t2}</p></div>`;
 });
 
