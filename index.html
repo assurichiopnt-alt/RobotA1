@@ -7,6 +7,9 @@
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
+  /* AVISION Rev8: Consent Mode — ปิดการเก็บ cookie วิเคราะห์ไว้ก่อน จนกว่าผู้เข้าชมกดยอมรับ */
+  gtag('consent','default',{analytics_storage:'denied',ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied'});
+  try{ if(localStorage.getItem('avCk')==='granted') gtag('consent','update',{analytics_storage:'granted'}); }catch(e){}
   gtag('js', new Date());
 
   gtag('config', 'G-BLY3XHFNM5');
@@ -908,6 +911,17 @@
     box-shadow:inset 0 0 0 1px rgba(255,255,255,.92),0 0 24px rgba(var(--accent-rgb),.22),0 16px 32px rgba(15,18,24,.13)}
   .card:hover .card-vis::after{border-color:rgba(var(--accent-rgb),.75)}
   .catdl{background:linear-gradient(100deg,var(--ink) 0%,#1E2128 100%)}
+
+/* AVISION Rev8: cookie banner */
+#ckBar{position:fixed;left:12px;right:12px;bottom:12px;z-index:99999;max-width:720px;margin:0 auto;background:#0F1218;color:#F7F5F0;border:1px solid rgba(255,255,255,.14);border-radius:14px;padding:16px 18px;box-shadow:0 10px 40px rgba(0,0,0,.35);display:none;font-size:13px;line-height:1.6}
+#ckBar.show{display:block}
+#ckBar p{margin:0 0 12px}
+#ckBar .ck-row{display:flex;gap:10px;flex-wrap:wrap}
+#ckBar button{font:inherit;font-weight:600;cursor:pointer;border-radius:8px;padding:10px 18px;border:1px solid #977A3E}
+#ckBar .ck-yes{background:#977A3E;color:#fff}
+#ckBar .ck-no{background:transparent;color:#F7F5F0;border-color:rgba(255,255,255,.35)}
+html[lang="en"] #ckBar .ck-th{display:none}
+html:not([lang="en"]) #ckBar .ck-en{display:none}
 </style>
 </head>
 <body>
@@ -2038,6 +2052,30 @@ route();
       fetch(LEAD_ENDPOINT,{method:'POST',mode:'no-cors',keepalive:true,body:new URLSearchParams(data)});
     }catch(e){}
   },true);
+})();
+</script>
+<div id="ckBar" role="dialog" aria-label="Cookie consent" aria-live="polite">
+<p class="ck-th">เว็บไซต์นี้ใช้ cookie เพื่อวัดสถิติผู้เข้าชม (Google Analytics) และปรับปรุงเว็บไซต์ ท่านเลือกยอมรับหรือปฏิเสธได้ ปฏิเสธแล้วยังใช้งานเว็บได้ตามปกติ</p>
+<p class="ck-en">This website uses cookies to measure traffic (Google Analytics) and improve the site. You may accept or decline; the site works normally either way.</p>
+<div class="ck-row">
+<button type="button" class="ck-yes" id="ckYes"><span class="ck-th">ยอมรับ</span><span class="ck-en">Accept</span></button>
+<button type="button" class="ck-no" id="ckNo"><span class="ck-th">ปฏิเสธ</span><span class="ck-en">Decline</span></button>
+</div>
+</div>
+<script>
+/* AVISION Rev8 · cookie consent → GA4 Consent Mode */
+(function(){
+  var bar=document.getElementById('ckBar'); if(!bar)return;
+  var saved=null; try{saved=localStorage.getItem('avCk');}catch(e){}
+  if(!saved) bar.classList.add('show');
+  function pick(v){
+    try{localStorage.setItem('avCk',v);}catch(e){}
+    if(v==='granted' && typeof gtag==='function') gtag('consent','update',{analytics_storage:'granted'});
+    bar.classList.remove('show');
+  }
+  document.getElementById('ckYes').addEventListener('click',function(){pick('granted');});
+  document.getElementById('ckNo').addEventListener('click',function(){pick('denied');});
+  window.avCookieSettings=function(){bar.classList.add('show');};
 })();
 </script>
 </body>
