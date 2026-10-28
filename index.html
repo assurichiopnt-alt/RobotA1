@@ -1316,17 +1316,17 @@
       <p class="rsub" data-en="Fill in the basics and our team will reply with a quote.">กรอกข้อมูลเบื้องต้น ทีมงานจะติดต่อกลับพร้อมใบเสนอราคา</p>
       <form id="rfqForm">
         <div class="field-row">
-          <div class="field"><label data-en="Full name *">ชื่อ-สกุล *</label><input required type="text" name="name" placeholder="—" pattern=".*\S.*" title="กรุณากรอกข้อมูล / Please fill in"></div>
-          <div class="field"><label data-en="Company *">บริษัท *</label><input required type="text" name="company" placeholder="—" pattern=".*\S.*" title="กรุณากรอกข้อมูล / Please fill in"></div>
+          <div class="field"><label for="rfq-name" data-en="Full name *">ชื่อ-สกุล *</label><input id="rfq-name" autocomplete="name" required type="text" name="name" placeholder="—" pattern=".*\S.*" title="กรุณากรอกข้อมูล / Please fill in"></div>
+          <div class="field"><label for="rfq-company" data-en="Company *">บริษัท *</label><input id="rfq-company" autocomplete="organization" required type="text" name="company" placeholder="—" pattern=".*\S.*" title="กรุณากรอกข้อมูล / Please fill in"></div>
         </div>
         <div class="field-row">
-          <div class="field"><label data-en="Email *">อีเมล *</label><input required type="email" name="email" placeholder="you@company.com" pattern="[^\s@]+@[^\s@]+\.[^\s@]+" title="กรุณากรอกอีเมลให้ถูกต้อง เช่น you@company.com / Please enter a valid email"></div>
-          <div class="field"><label data-en="Phone *">โทรศัพท์ *</label><input required type="tel" name="phone" placeholder="08x-xxx-xxxx" pattern="[0-9+\(\)\-\s.]{7,20}" title="กรุณากรอกเบอร์โทรศัพท์ (ตัวเลข 7-20 หลัก) / Please enter a valid phone number"></div>
+          <div class="field"><label for="rfq-email" data-en="Email *">อีเมล *</label><input id="rfq-email" autocomplete="email" required type="email" name="email" placeholder="you@company.com" pattern="[^\s@]+@[^\s@]+\.[^\s@]+" title="กรุณากรอกอีเมลให้ถูกต้อง เช่น you@company.com / Please enter a valid email"></div>
+          <div class="field"><label for="rfq-phone" data-en="Phone *">โทรศัพท์ *</label><input id="rfq-phone" autocomplete="tel" required type="tel" name="phone" placeholder="08x-xxx-xxxx" pattern="[0-9+\(\)\-\s.]{7,20}" title="กรุณากรอกเบอร์โทรศัพท์ (ตัวเลข 7-20 หลัก) / Please enter a valid phone number"></div>
         </div>
-        <div class="field"><label data-en="Solution of interest">กลุ่มโซลูชันที่สนใจ</label>
-          <select name="solution"><option>Robotic Automation</option><option>Automated Logistics</option><option>Robot Service</option><option>Robot Station Service</option><option data-en="Not sure — need advice">ยังไม่แน่ใจ ต้องการคำปรึกษา</option></select>
+        <div class="field"><label for="rfq-solution" data-en="Solution of interest">กลุ่มโซลูชันที่สนใจ</label>
+          <select id="rfq-solution" name="solution"><option>Robotic Automation</option><option>Automated Logistics</option><option>Robot Service</option><option>Robot Station Service</option><option data-en="Not sure — need advice">ยังไม่แน่ใจ ต้องการคำปรึกษา</option></select>
         </div>
-        <div class="field"><label data-en="Details *">รายละเอียดความต้องการ *</label><textarea required minlength="10" rows="3" name="details" placeholder="—"></textarea></div>
+        <div class="field"><label for="rfq-details" data-en="Details *">รายละเอียดความต้องการ *</label><textarea id="rfq-details" required minlength="10" rows="3" name="details" placeholder="—"></textarea></div>
         <label class="consent"><input required type="checkbox" name="consent" value="yes"><span data-en="I consent to Assurich Industries Pte Ltd collecting and using the information above to contact me and prepare a quotation.">ข้าพเจ้ายินยอมให้ Assurich Industries Pte Ltd เก็บและใช้ข้อมูลข้างต้นเพื่อติดต่อกลับและจัดทำใบเสนอราคา</span></label>
         <button type="submit" class="btn btn-accent"><span data-en="Send request">ส่งคำขอใบเสนอราคา</span> <svg width="15" height="15" viewBox="0 0 15 15" fill="none"><path d="M3 7.5h9M8 3.5l4 4-4 4" stroke="currentColor" stroke-width="1.6"/></svg></button>
         <p class="rfq-note" data-en="Your request goes directly to our sales team. We reply within 24 business hours.">คำขอของท่านจะส่งถึงทีมขายโดยตรง ทีมงานจะติดต่อกลับภายใน 24 ชั่วโมงทำการ</p>
