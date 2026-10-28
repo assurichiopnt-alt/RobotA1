@@ -409,6 +409,9 @@
   .field-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
   .rfq .btn{width:100%;justify-content:center;margin-top:6px}
   .rfq-note{font-size:12px;color:var(--soft);margin-top:14px;text-align:center}
+  .consent{display:flex;gap:10px;align-items:flex-start;font-size:13px;line-height:1.55;color:var(--ink);margin:2px 0 14px;cursor:pointer}
+  .consent input{flex:none;width:17px;height:17px;margin-top:3px;accent-color:var(--accent);cursor:pointer}
+  .pdpa{font-size:11.5px;line-height:1.6;color:var(--soft);margin-top:10px;text-align:left}
   .rfq-sent{text-align:center;padding:30px 10px}
   .rfq-sent .ok{width:56px;height:56px;margin:0 auto 16px;color:var(--accent)}
 
@@ -1324,8 +1327,10 @@
           <select name="solution"><option>Robotic Automation</option><option>Automated Logistics</option><option>Robot Service</option><option>Robot Station Service</option><option data-en="Not sure — need advice">ยังไม่แน่ใจ ต้องการคำปรึกษา</option></select>
         </div>
         <div class="field"><label data-en="Details">รายละเอียดความต้องการ</label><textarea rows="3" name="details" placeholder="—"></textarea></div>
+        <label class="consent"><input required type="checkbox" name="consent" value="yes"><span data-en="I consent to Assurich Industries Pte Ltd collecting and using the information above to contact me and prepare a quotation.">ข้าพเจ้ายินยอมให้ Assurich Industries Pte Ltd เก็บและใช้ข้อมูลข้างต้นเพื่อติดต่อกลับและจัดทำใบเสนอราคา</span></label>
         <button type="submit" class="btn btn-accent"><span data-en="Send request">ส่งคำขอใบเสนอราคา</span> <svg width="15" height="15" viewBox="0 0 15 15" fill="none"><path d="M3 7.5h9M8 3.5l4 4-4 4" stroke="currentColor" stroke-width="1.6"/></svg></button>
-        <p class="rfq-note" data-en="Your request goes straight to our sales team on WhatsApp.">คำขอของท่านจะส่งตรงถึงทีมขายทาง WhatsApp ทันที</p>
+        <p class="rfq-note" data-en="Your request goes directly to our sales team. We reply within 24 business hours.">คำขอของท่านจะส่งถึงทีมขายโดยตรง ทีมงานจะติดต่อกลับภายใน 24 ชั่วโมงทำการ</p>
+        <p class="pdpa" data-en="Privacy: The details you enter (name, company, email, phone and your requirements) are used only to respond to this request and are shared with relevant Assurich team members. They are stored with Google services (Google Sheets and email) for as long as needed to follow up and provide our services. You may request access, correction or deletion of your data, or withdraw your consent, at sales@assurich.com.">การคุ้มครองข้อมูลส่วนบุคคล: ข้อมูลที่ท่านกรอก (ชื่อ บริษัท อีเมล โทรศัพท์ และรายละเอียดความต้องการ) จะถูกใช้เพื่อตอบกลับคำขอนี้เท่านั้น และเปิดเผยแก่ทีมงาน Assurich ที่เกี่ยวข้อง โดยจัดเก็บผ่านบริการของ Google (Google Sheets และอีเมล) เป็นเวลาเท่าที่จำเป็นต่อการติดต่อและให้บริการ ท่านสามารถขอเข้าถึง แก้ไข ลบข้อมูล หรือถอนความยินยอมได้ที่ sales@assurich.com</p>
       </form>
     </div>
   </div></section>
@@ -1842,7 +1847,7 @@ document.getElementById('rfqForm').addEventListener('submit',e=>{
     // ส่งแบบเบื้องหลังทุกเบอร์ (GET ผ่าน Image เพื่อเลี่ยงปัญหา CORS)
     ready.forEach(r=>{new Image().src=`https://api.callmebot.com/whatsapp.php?phone=${r.phone}&apikey=${r.apikey}&text=${encodeURIComponent(msg)}`;});
   }else{
-    window.open(`https://wa.me/${RFQ_WA[0].phone}?text=${encodeURIComponent(msg)}`,'_blank','noopener');
+    /* AVISION Rev3: ไม่เปิด WhatsApp อัตโนมัติแล้ว · ลีดส่งเข้า Google Sheet + อีเมลแจ้งเตือนผ่าน Lead sender ด้านล่าง */
   }
   const t1=lang==='th'?'ส่งคำขอเรียบร้อย':'Request sent',t2=lang==='th'?'ทีมวิศวกรจะติดต่อกลับภายใน 24 ชั่วโมงทำการ':'Our engineers will reply within 24 business hours.';
   document.getElementById('rfqCard').innerHTML=`<div class="rfq-sent"><svg class="ok" viewBox="0 0 56 56" fill="none"><circle cx="28" cy="28" r="26" stroke="currentColor" stroke-width="2.5"/><path d="M17 29l7 7 15-16" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg><h3>${t1}</h3><p class="rsub">${t2}</p></div>`;
