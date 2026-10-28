@@ -13,6 +13,12 @@
 </script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ROBOTA1 — European Industrial Automation</title>
+<meta name="description" content="ROBOTA1 by Assurich Industries: European industrial automation across ASEAN. Robotic arms, AGV/AMR logistics, service robots and robot coffee stations. 40+ years of expertise. Request a quote.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="ROBOTA1">
+<meta property="og:title" content="ROBOTA1 — European Industrial Automation">
+<meta property="og:description" content="Robotic arms, AGV/AMR logistics, service robots and robot coffee stations. Backed by Assurich Group, 40+ years across ASEAN.">
+<meta property="og:url" content="https://robota1.com/">
 <link rel="canonical" href="https://robota1.com/">
 <link rel="icon" href="favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
@@ -2003,6 +2009,26 @@ route();
     }else if(foot&&a.classList.contains('btn-accent')){
       ev('click_quote',{product:product});
     }
+  },true);
+})();
+</script>
+<script>
+/* AVISION · Lead sender → Google Sheet (ROBOTA1 Leads) · Rev2
+   ส่งข้อมูลฟอร์ม RFQ เข้า Google Sheet เบื้องหลัง · ยังเปิด WhatsApp เหมือนเดิม */
+(function(){
+  var LEAD_ENDPOINT='https://script.google.com/macros/s/AKfycbzh0iCBspJ1az4gqdJhBQXJQ80zw467qNw6iYvFZBqZanzfZYSbJU16NZjMpBctKXmZmg/exec';
+  var f=document.getElementById('rfqForm');
+  if(!f)return;
+  f.addEventListener('submit',function(){
+    try{
+      var g=function(n){var el=f.elements[n];return el&&el.value?String(el.value).trim():'';};
+      var data={name:g('name'),company:g('company'),email:g('email'),phone:g('phone'),
+                solution:g('solution'),details:g('details'),
+                lang:(typeof lang!=='undefined'?lang:(document.documentElement.lang||'')),
+                page:location.href};
+      if(!data.name&&!data.email&&!data.phone)return;   /* ฟอร์มว่าง ไม่ส่ง */
+      fetch(LEAD_ENDPOINT,{method:'POST',mode:'no-cors',keepalive:true,body:new URLSearchParams(data)});
+    }catch(e){}
   },true);
 })();
 </script>
