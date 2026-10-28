@@ -1,0 +1,5 @@
+# AVISION · Rev1
+User-agent: *
+Allow: /
+
+Sitemap: https://robota1.com/sitemap.xml

@@ -1958,5 +1958,53 @@ renderNews();
 setLang('en');
 route();
 </script>
+<script>
+/* AVISION · GA4 lead tracking · Rev1
+   events: generate_lead, click_whatsapp, click_phone, click_email,
+           download_datasheet, request_datasheet, click_quote + virtual page_view for #/ routes */
+(function(){
+  function ev(n,p){try{if(typeof gtag==='function')gtag('event',n,p||{});}catch(e){}}
+
+  /* 1) เว็บใช้ลิงก์แบบ #/products #/contact → ส่ง page_view เองเมื่อเปลี่ยนหน้า (ไม่นับซ้ำหน้าแรกตอนโหลด) */
+  var lastPath=(location.hash||'#/').split('?')[0];
+  addEventListener('hashchange',function(){
+    var p=(location.hash||'#/').split('?')[0];
+    if(p===lastPath)return;
+    lastPath=p;
+    ev('page_view',{page_title:document.title,page_location:location.origin+'/'+p,page_path:'/'+p});
+  });
+
+  /* 2) ฟอร์มขอใบเสนอราคา (RFQ) → generate_lead (ไม่ส่งข้อมูลส่วนตัว ส่งเฉพาะกลุ่มโซลูชัน) */
+  var f=document.getElementById('rfqForm');
+  if(f)f.addEventListener('submit',function(){
+    var s=f.elements['solution'];
+    ev('generate_lead',{form_id:'rfqForm',solution:s&&s.value?s.value:'-'});
+  },true);
+
+  /* 3) คลิกลิงก์: WhatsApp / โทร / อีเมล / Datasheet / ขอราคา */
+  document.addEventListener('click',function(e){
+    var a=e.target&&e.target.closest?e.target.closest('a'):null;
+    if(!a)return;
+    var href=a.getAttribute('href')||'';
+    var foot=a.closest('.card-foot');
+    var body=a.closest('.card-body');
+    var h4=body?body.querySelector('h4'):null;
+    var product=h4?h4.textContent.trim():'';
+    if(href.indexOf('wa.me/')>-1){
+      ev('click_whatsapp',{link_url:href.split('?')[0],placement:a.classList.contains('wa')?'floating':'page'});
+    }else if(href.indexOf('tel:')===0){
+      ev('click_phone',{phone:href.slice(4)});
+    }else if(href.indexOf('mailto:')===0){
+      ev('click_email',{email:href.slice(7)});
+    }else if(foot&&a.classList.contains('btn-line')){
+      /* มีไฟล์ = ดาวน์โหลดจริง · ไม่มีไฟล์ (พาไปหน้าติดต่อ) = ลูกค้าขอ Datasheet */
+      if(href.charAt(0)==='#')ev('request_datasheet',{product:product});
+      else ev('download_datasheet',{product:product,link_url:href});
+    }else if(foot&&a.classList.contains('btn-accent')){
+      ev('click_quote',{product:product});
+    }
+  },true);
+})();
+</script>
 </body>
 </html>
