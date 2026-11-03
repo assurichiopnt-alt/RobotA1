@@ -1,0 +1,67 @@
+# ROBOTA1
+
+> ROBOTA1 is the robotic-hub brand of Assurich Industries Pte Ltd (Singapore): industrial robots, AGV/AMR logistics, vacuum lifting, palletizing, service and cleaning robots and robot coffee stations, supplied and supported across ASEAN. Request a quote at https://robota1.com/#/contact or sales@assurich.com, +65 64591069.
+
+## Product categories
+- [Robot Welding](https://robota1.com/category/welding-robots/): Welding robots and welding cobots; 5 models
+- [Industrial Robotic Arms](https://robota1.com/category/industrial-robots/): Industrial robotic arms; 6 models
+- [Logistics & Material Handling](https://robota1.com/category/logistics/): AGV, vacuum lifting and palletizing systems; 28 models
+- [Service & Cleaning Robots](https://robota1.com/category/service-cleaning-robots/): Service and cleaning robots; 5 models
+- [Robot Station Service](https://robota1.com/category/robot-stations/): Robot station services (robot coffee stations); 3 models
+
+## Featured models
+- [iiMT CI-05Wy](https://robota1.com/products/iimt-ci-05wy/): portable collaborative welding robot with magnetic base, 5 kg payload, 900 mm reach
+- [iiMT CI series](https://robota1.com/products/iimt-ci-series/): collaborative robots, 3-20 kg payload, 600-1,650 mm reach
+
+## All products
+- [GSK-RH06](https://robota1.com/products/gsk-rh06/): Robot Welding, GSK
+- [CRP-RC09](https://robota1.com/products/crp-rc09/): Robot Welding, CROBOTP
+- [CRP-RH14](https://robota1.com/products/crp-rh14/): Robot Welding, CROBOTP
+- [iiMT CI-05Wy](https://robota1.com/products/iimt-ci-05wy/): Robot Welding, iiMT ROBOT
+- [iiMT-CW-05](https://robota1.com/products/iimt-cw-05/): Robot Welding, iiMT ROBOT
+- [GSK RB series](https://robota1.com/products/gsk-rb-series/): Industrial Robotic Arms, GSK
+- [GSK RMD series](https://robota1.com/products/gsk-rmd-series/): Industrial Robotic Arms, GSK
+- [iiMT CI series](https://robota1.com/products/iimt-ci-series/): Industrial Robotic Arms, iiMT
+- [CRP-RA09A-07](https://robota1.com/products/crp-ra09a-07/): Industrial Robotic Arms, CRP
+- [CRP-RP24-130](https://robota1.com/products/crp-rp24-130/): Industrial Robotic Arms, CRP
+- [CRP-RS06A-06Z20](https://robota1.com/products/crp-rs06a-06z20/): Industrial Robotic Arms, CRP
+- [iiMT-Double arm intelligent coffee shop](https://robota1.com/products/iimt-double-arm-intelligent-coffee-shop/): Robot Station Service, iiMT
+- [iiMT-Single arm intelligent coffee shop](https://robota1.com/products/iimt-single-arm-intelligent-coffee-shop/): Robot Station Service, iiMT
+- [iiMT-Intelligent delivery integrated coffee shop](https://robota1.com/products/iimt-intelligent-delivery-integrated-coffee-shop/): Robot Station Service, iiMT
+- [FZ-VacuQuicklift](https://robota1.com/products/fz-vacuquicklift/): Logistics & Material Handling, FEZER
+- [FZ-VacuPowerlift](https://robota1.com/products/fz-vacupowerlift/): Logistics & Material Handling, FEZER
+- [FZ-VacuMobilift](https://robota1.com/products/fz-vacumobilift/): Logistics & Material Handling, FEZER
+- [FZ-Panel handling](https://robota1.com/products/fz-panel-handling/): Logistics & Material Handling, FEZER
+- [FZ-VacuBoy](https://robota1.com/products/fz-vacuboy/): Logistics & Material Handling, FEZER
+- [FZ-VacuGiant](https://robota1.com/products/fz-vacugiant/): Logistics & Material Handling, FEZER
+- [FZ-VacuCoil](https://robota1.com/products/fz-vacucoil/): Logistics & Material Handling, FEZER
+- [FZ-VacuPoro](https://robota1.com/products/fz-vacuporo/): Logistics & Material Handling, FEZER
+- [FZ-VacuWood](https://robota1.com/products/fz-vacuwood/): Logistics & Material Handling, FEZER
+- [FZ-Overhead rail systems](https://robota1.com/products/fz-overhead-rail-systems/): Logistics & Material Handling, FEZER
+- [FZ-Slewing cranes](https://robota1.com/products/fz-slewing-cranes/): Logistics & Material Handling, FEZER
+- [FZ-Electric chain hoists](https://robota1.com/products/fz-electric-chain-hoists/): Logistics & Material Handling, FEZER
+- [FZ-VacuStand](https://robota1.com/products/fz-vacustand/): Logistics & Material Handling, FEZER
+- [FZ-Stationary systems](https://robota1.com/products/fz-stationary-systems/): Logistics & Material Handling, FEZER
+- [FZ-Mobilift](https://robota1.com/products/fz-mobilift/): Logistics & Material Handling, FEZER
+- [iiMT-Jizhi A1 Robot](https://robota1.com/products/iimt-jizhi-a1-robot/): Service & Cleaning Robots, iiMT
+- [iiMT-DR-02](https://robota1.com/products/iimt-dr-02/): Service & Cleaning Robots, iiMT
+- [iiMT-DR-01](https://robota1.com/products/iimt-dr-01/): Service & Cleaning Robots, iiMT
+- [iiMT-UC](https://robota1.com/products/iimt-uc/): Service & Cleaning Robots, iiMT
+- [iiMT-CL-V](https://robota1.com/products/iimt-cl-v/): Service & Cleaning Robots, iiMT
+- [JT-IN6000-QYD60S](https://robota1.com/products/jt-in6000-qyd60s/): Logistics & Material Handling, JATEN
+- [JT-Bumble Bee IN2500-37](https://robota1.com/products/jt-bumble-bee-in2500-37/): Logistics & Material Handling, JATEN
+- [JT-SLAM300-D343-MMO](https://robota1.com/products/jt-slam300-d343-mmo/): Logistics & Material Handling, JATEN
+- [JT-SDM500-D228](https://robota1.com/products/jt-sdm500-d228/): Logistics & Material Handling, JATEN
+- [JT-DM1500-335-QLD](https://robota1.com/products/jt-dm1500-335-qld/): Logistics & Material Handling, JATEN
+- [JT-LN1400-R14](https://robota1.com/products/jt-ln1400-r14/): Logistics & Material Handling, JATEN
+- [JT-SLAM600-03](https://robota1.com/products/jt-slam600-03/): Logistics & Material Handling, JATEN
+- [JT-LN1600-L16](https://robota1.com/products/jt-ln1600-l16/): Logistics & Material Handling, JATEN
+- [JT-LN2000-E20](https://robota1.com/products/jt-ln2000-e20/): Logistics & Material Handling, JATEN
+- [JT-LN1500-A15-NDC](https://robota1.com/products/jt-ln1500-a15-ndc/): Logistics & Material Handling, JATEN
+- [GZ-MD1750](https://robota1.com/products/gz-md1750/): Logistics & Material Handling, GZCR
+- [GZ-MD32180](https://robota1.com/products/gz-md32180/): Logistics & Material Handling, GZCR
+- [GZ-MD30 Series](https://robota1.com/products/gz-md30-series/): Logistics & Material Handling, GZCR
+
+## Company
+- [Privacy Policy](https://robota1.com/#/privacy)
+- [Assurich Group](https://www.assurich.com/en/)
