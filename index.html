@@ -1808,12 +1808,13 @@ const products=[
 ];
 let fCat='all',fSub='all',fSub2='all';
 const grid=document.getElementById('prodgrid');
+function pSlug(n){return n.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'');} /* AVISION Rev10 */
 function renderProducts(){
   const dsheet=lang==='th'?'Datasheet':'Datasheet',rfq=lang==='th'?'ขอราคา':'Quote',none=lang==='th'?'ไม่พบสินค้าตามเงื่อนไข · ลองปรับตัวกรอง':'No products match · try adjusting filters';
   const list=products.filter(p=>(fCat==='all'||p.cat===fCat)&&(fSub==='all'||p.sub===fSub)&&(fSub2==='all'||p.sub2===fSub2));
   if(!list.length){grid.innerHTML=`<div class="noresult">${none}</div>`;return;}
   grid.innerHTML=list.map(p=>`<div class="card"><div class="card-in"><div class="card-vis">${phBox(p.n)}<span class="tagpill">${p.tag}</span></div>
-    <div class="card-body"><span class="ghost">${p.n}</span><div class="brandrow">${LOGO[p.n]?`<img class="blogo" src="${LOGO[p.n]}" alt="${p.b}">`:`<span class="bl">${p.b}</span>`}</div><h4>${p.n}</h4>
+    <div class="card-body"><span class="ghost">${p.n}</span><div class="brandrow">${LOGO[p.n]?`<img class="blogo" src="${LOGO[p.n]}" alt="${p.b}">`:`<span class="bl">${p.b}</span>`}</div><h4><a href="/products/${pSlug(p.n)}/" style="color:inherit;text-decoration:none">${p.n}</a></h4>
     <ul class="spec-mini">${p.specs.map(s=>`<li><span>${s[0]}</span><span>${s[1]}</span></li>`).join('')}</ul>
     <div class="card-foot">${DATASHEET[p.n]?`<a href="${DATASHEET[p.n]}" class="btn btn-line" target="_blank" rel="noopener">${dsheet}</a>`:`<a href="#/contact" class="btn btn-line" title="ยังไม่มี Datasheet — ติดต่อขอได้">${dsheet}</a>`}<a href="#/contact" class="btn btn-accent">${rfq}</a></div></div></div></div>`).join('');
   hydrate(grid);
